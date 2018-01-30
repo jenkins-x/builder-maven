@@ -1,7 +1,4 @@
-FROM rawlingsj/builder-base:dev1
-
-RUN yum install -y java-1.8.0-openjdk-devel \
-  java-1.8.0-openjdk-devel.i686
+FROM jenkinsxio/builder-base:0.0.10
 
 # Maven
 ENV MAVEN_VERSION 3.3.9
