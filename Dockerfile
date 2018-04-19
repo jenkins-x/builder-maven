@@ -1,4 +1,4 @@
-FROM jenkinsxio/builder-base:0.0.203
+FROM jenkinsxio/builder-base:0.0.204
 
 # Maven
 ENV MAVEN_VERSION 3.3.9
