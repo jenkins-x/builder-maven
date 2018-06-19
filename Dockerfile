@@ -12,4 +12,9 @@ ENV PATH $M2:$PATH
 COPY set_java $M2
 RUN $M2/set_java && rm $M2/set_java
 
+# upgrade skaffold
+RUN curl -Lo skaffold https://github.com/jstrachan/skaffold/releases/download/v0.7.0.p1/skaffold-linux-amd64 && \
+chmod +x skaffold && \
+  mv skaffold /usr/bin
+
 CMD ["mvn","-version"]
