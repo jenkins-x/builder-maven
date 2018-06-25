@@ -13,7 +13,8 @@ COPY set_java $M2
 RUN $M2/set_java && rm $M2/set_java
 
 # upgrade skaffold
-RUN curl -Lo skaffold https://github.com/jstrachan/skaffold/releases/download/v0.7.0.p4/skaffold-linux-amd64 && \
+ENV SKAFFOLD_VERSION 0.8.0
+RUN curl -Lo skaffold https://github.com/GoogleCloudPlatform/skaffold/releases/download/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 && \
 chmod +x skaffold && \
   mv skaffold /usr/bin
 
