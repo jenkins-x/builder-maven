@@ -8,6 +8,12 @@ ENV maven.home $M2_HOME
 ENV M2 $M2_HOME/bin
 ENV PATH $M2:$PATH
 
+# try latest skaffold
+ENV SKAFFOLD_VERSION 0.9.0
+RUN curl -Lo skaffold https://github.com/GoogleCloudPlatform/skaffold/releases/download/v${SKAFFOLD_VERSION}/skaffold-linux-amd64 && \
+ chmod +x skaffold && \
+   mv skaffold /usr/bin
+   
 # Set JDK to be 32bit
 COPY set_java $M2
 RUN $M2/set_java && rm $M2/set_java
